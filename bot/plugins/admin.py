@@ -35,7 +35,7 @@ async def stats_handler(_, m: Message):
     )
 
 # @Client.on_message(filters.command(["status"]) & filters.private & ~filters.edited)
-async def status_handler(_, m: Message):
+#async def status_handler(_, m: Message):
     
 
 @Client.on_message(filters.command("broadcast") & filters.user(Config.OWNER_ID) & filters.reply & ~filters.edited)
