@@ -34,8 +34,22 @@ async def stats_handler(_, m: Message):
         quote=True
     )
 
-# @Client.on_message(filters.command(["status"]) & filters.private & ~filters.edited)
-#async def status_handler(_, m: Message):
+@Client.on_message(filters.command(["status"]) & filters.private & ~filters.edited)
+async def status_handler(_, m: Message):
+    total, used, free = shutil.disk_usage(".")
+    total = humanbytes(total)
+    used = humanbytes(used)
+    free = humanbytes(free)
+    cpu_usage = psutil.cpu_percent()
+    ram_usage = psutil.virtual_memory().percent
+    disk_usage = psutil.disk_usage('/').percent
+    await m.reply_text(
+        text=f"**Disk:** `{used}` of `{total}` \n"
+             f"**CPU:** `{cpu_usage}%` \n"
+             f"**RAM:** `{ram_usage}%`",
+        parse_mode="Markdown",
+        quote=True
+    )
     
 
 @Client.on_message(filters.command("broadcast") & filters.user(Config.OWNER_ID) & filters.reply & ~filters.edited)
