@@ -23,7 +23,7 @@ async def ping_handler(c: Client, m: "types.Message"):
         ]])
     )
 @Client.on_message(filters.command(["settings"]) & filters.private & ~filters.edited)
-async def show_settings(c: Client, m: "types.Message"):
+async def settings(c: Client, m: "types.Message"):
     usr_id = m.chat.id
     user_data = await db.get_user_data(usr_id)
     if not user_data:
