@@ -34,7 +34,7 @@ async def stats_handler(_, m: Message):
         quote=True
     )
 
-@Client.on_message(filters.command(["status"]) & filters.private & ~filters.edited)
+# @Client.on_message(filters.command(["status"]) & filters.private & ~filters.edited)
 async def status_handler(_, m: Message):
     
 
