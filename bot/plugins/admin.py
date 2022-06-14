@@ -44,7 +44,7 @@ async def status_handler(_, m: Message):
     ram_usage = psutil.virtual_memory().percent
     disk_usage = psutil.disk_usage('/').percent
     await m.reply_text(
-        text=f"**__Bot Info__** \n\n"
+        text=f"<u>ʙᴏᴛ ꜱᴛᴀᴛᴜꜱ</u> \n\n"
              f"**Disk:** `{used}` of `{total}` \n"
              f"**CPU:** `{cpu_usage}%` \n"
              f"**RAM:** `{ram_usage}%`",
