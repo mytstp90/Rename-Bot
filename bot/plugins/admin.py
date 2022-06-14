@@ -13,8 +13,8 @@ from bot.core.display import humanbytes
 from bot.core.handlers.broadcast import broadcast_handler
 
 
-@Client.on_message(filters.command("status") & filters.user(Config.OWNER_ID) & ~filters.edited)
-async def status_handler(_, m: Message):
+@Client.on_message(filters.command("stats") & filters.user(Config.OWNER_ID) & ~filters.edited)
+async def stats_handler(_, m: Message):
     total, used, free = shutil.disk_usage(".")
     total = humanbytes(total)
     used = humanbytes(used)
@@ -34,6 +34,9 @@ async def status_handler(_, m: Message):
         quote=True
     )
 
+@Client.on_message(filters.command(["status"]) & filters.private & ~filters.edited)
+async def status_handler(_, m: Message):
+    
 
 @Client.on_message(filters.command("broadcast") & filters.user(Config.OWNER_ID) & filters.reply & ~filters.edited)
 async def broadcast_in(_, m: Message):
