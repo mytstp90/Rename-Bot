@@ -10,7 +10,7 @@ from pyrogram.errors import FloodWait
 
 PROGRESS = """
 **Progress:** `{0}%`
-**Done** `{1}` ***of** `{2}`
+**Done** `{1}` **of** `{2}`
 **Speed:** `{3}/s`
 **ETA:** `{4}`
 """
