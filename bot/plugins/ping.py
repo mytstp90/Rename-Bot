@@ -32,5 +32,7 @@ async def settings_handler(c: Client, m: "types.Message"):
         text="Here you can setup your settings:"
         reply_markup=types.InlineKeyboardMarkup([[
            types.InlineKeyboardButton("Show Settings",
-                                      callback_data="showSettings")]])
+                                      callback_data="showSettings")]]),
+        disable_web_page_preview=True,
+        reply_to_message_id=m.message_id
     )
