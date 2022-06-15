@@ -103,10 +103,10 @@ async def cb_handlers(c: Client, cb: "types.CallbackQuery"):
     elif cb.data == "showFileInfo":
         replied_m = cb.message.reply_to_message
         _file_name = get_media_file_name(replied_m)
-        text = f"**File Name:** `{_file_name}`\n\n" \
-               f"**File Extension:** `{_file_name.rsplit('.', 1)[-1].upper()}`\n\n" \
-               f"**File Type:** `{get_file_type(replied_m).upper()}`\n\n" \
-               f"**File Size:** `{humanbytes(get_media_file_size(replied_m))}`\n\n" \
+        text = f"**File Name:** `{_file_name}`\n" \
+               f"**File Extension:** `{_file_name.rsplit('.', 1)[-1].upper()}`\n" \
+               f"**File Type:** `{get_file_type(replied_m).upper()}`\n" \
+               f"**File Size:** `{humanbytes(get_media_file_size(replied_m))}`\n" \
                f"**File MimeType:** `{get_file_attr(replied_m).mime_type}`"
         await cb.message.edit(
             text=text,
