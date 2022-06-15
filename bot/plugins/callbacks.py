@@ -118,3 +118,10 @@ async def cb_handlers(c: Client, cb: "types.CallbackQuery"):
         )
     elif cb.data == "closeMessage":
         await cb.message.delete(True)
+
+    elif cb.data == "close":
+        await cb.message.delete(True)
+        try:
+            await cb.message.reply_to_message.delete(True)
+        except:
+            pass
