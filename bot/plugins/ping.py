@@ -14,8 +14,9 @@ async def ping_handler(c: Client, m: "types.Message"):
         chat_id=m.chat.id,
         text="Hi, User!\n\n"
              "I can rename media without downloading it!\n"
-             "Speed depends on your media DC.\n\n"
-             "Just send me media and reply to it with /rename command.",
+             "Speed depends on your media DC.\n"
+             "Just send me media and reply to it with /rename command.\n\n"
+             "Use /settings for changing your settings",
         reply_markup=types.InlineKeyboardMarkup([[
            types.InlineKeyboardButton("Updates", url="https://t.me/Desi_iBoTs"),
            types.InlineKeyboardButton("Updates", url="https://t.me/Desi_iBoTs")
