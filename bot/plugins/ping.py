@@ -38,7 +38,7 @@ async def settings_handler(c: Client, m: "types.Message"):
     )
 
 
-@trojanz.on_message(filters.command('about') & filters.private)
+@Client.on_message(filters.command('about') & filters.private)
 async def settings(c: Client, m: "types.Message"):
     await message.reply_text(
         text="Here you can setup your settings:",
