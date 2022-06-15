@@ -36,19 +36,3 @@ async def settings_handler(c: Client, m: "types.Message"):
         disable_web_page_preview=True,
         reply_to_message_id=m.message_id
     )
-
-
-@Client.on_message(filters.command('about') & filters.private)
-async def settings(c: Client, m: "types.Message"):
-    await message.reply_text(
-        text="Here you can setup your settings:",
-        disable_web_page_preview=True,
-        reply_markup=types.InlineKeyboardMarkup(
-            [
-                [
-                    types.InlineKeyboardButton("Settings", callback_data="showSettings")
-                ]                
-            ]
-        ),
-        reply_to_message_id=message.message_id
-    )
