@@ -4,6 +4,7 @@ from bot.client import Client
 from pyrogram import filters
 from pyrogram import types
 from bot.core.db.add import add_user_to_database
+from pyrogram.types import User
 
 @Client.on_message(filters.command(["start"]) & filters.private & ~filters.edited)
 async def ping_handler(c: Client, m: "types.Message"):
