@@ -6,3 +6,8 @@ services:
       - API_ID=${API_ID}
       - API_HASH=${API_HASH}
       - BOT_TOKEN=${BOT_TOKEN}
+      - MONGODB_URI=${MONGODB_URI}
+      - LOG_CHANNEL=${LOG_CHANNEL}
+      - OWNER_ID=${OWNER_ID}
+      - BROADCAST_AS_COPY=${BROADCAST_AS_COPY}
+      - DOWNLOAD_DIR=${DOWNLOAD_DIR}
