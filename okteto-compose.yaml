@@ -1,0 +1,6 @@
+version: " "
+services:
+  worker:
+    build: .
+    environment:
+- 
